@@ -4,9 +4,9 @@ import * as request from 'supertest';
 import PostsController from './posts.controller';
 import PostsService from './posts.service';
 import CreatePostDto from './dto/createPost.dto';
-import UpdatePostDto from './dto/updatePost.dto.js';
+import UpdatePostDto from './dto/updatePost.dto';
 
-describe('AppController', () => {
+describe('PostController', () => {
   let app: INestApplication;
   let postsService = {
     createPost: jest.fn(),

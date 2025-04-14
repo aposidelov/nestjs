@@ -12,7 +12,8 @@ export default class PostsService {
   constructor(
     @InjectRepository(PostEntity)
     private postsRepository: Repository<PostEntity>
-  ) {}
+  ) {    
+  }
 
   getAllPosts() {
     return this.postsRepository.find();
