@@ -3,6 +3,7 @@ import PostsService from './posts.service';
 import CreatePostDto from './dto/createPost.dto';
 import UpdatePostDto from './dto/updatePost.dto';
 import JwtAuthenticationGuard from '../authentication/jwt-authentication.guard';
+import { IdParamDto } from './dto/idParam.dto';
 
 @Controller('posts')
 export default class PostsController {
@@ -16,7 +17,7 @@ export default class PostsController {
   }
 
   @Get(':id')
-  getPostById(@Param('id') id: string) {
+  getPostById(@Param() {id}: IdParamDto) {
     return this.postsService.getPostById(Number(id));
   }
 
